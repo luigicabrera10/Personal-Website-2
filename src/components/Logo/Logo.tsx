@@ -1,7 +1,6 @@
 
 import Image from "next/image";
 
-
 export default function Logo({
     size,
     circlePadding = 10,
@@ -32,18 +31,14 @@ export default function Logo({
                     alt={"My Name Logo"}
                 />
                 <div style={{width: `${square}px`, height: `${square}px`}}>
-                    <div className="w-full h-full grid grid-cols-3 grid-rows-3 place-items-center">
-                        <div
-                            className="font-[Arapey] col-start-2 row-start-1"
+                    <div className="w-full h-full font-[Arapey] grid grid-cols-3 grid-rows-3 place-items-center">
+                        <div className="col-start-2 row-start-1"
                             style={{fontSize: `${fontSizeCalc}px`, color: fontColor}}>L</div>
-                        <div
-                            className="font-[Arapey] col-start-1 row-start-2"
+                        <div className="col-start-1 row-start-2"
                             style={{fontSize: `${fontSizeCalc}px`, color: fontColor}}>A</div>
-                        <div
-                            className="font-[Arapey] col-start-3 row-start-2"
+                        <div className="col-start-3 row-start-2"
                             style={{fontSize: `${fontSizeCalc}px`, color: fontColor}}>C</div>
-                        <div
-                            className="font-[Arapey] col-start-2 row-start-3"
+                        <div className="col-start-2 row-start-3"
                             style={{fontSize: `${fontSizeCalc}px`, color: fontColor}}>H</div>
                     </div>
                 </div>

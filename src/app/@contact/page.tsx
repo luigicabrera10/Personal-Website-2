@@ -2,9 +2,9 @@
 export default function ContactPage(){
 
     return (
-        <div className="w-full h-screen bg-red-500">
+        <section className="w-full h-full bg-red-500 snap-start"  id="contact">
             Contact
-        </div>
+        </section>
     )
 
 }

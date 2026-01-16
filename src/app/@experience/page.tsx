@@ -2,9 +2,9 @@
 export default function ExperiencePage(){
 
     return (
-        <div className="w-full h-screen bg-cyan-500">
+        <section className="w-full h-full bg-red-500 snap-start"  id="experience">
             Experience
-        </div>
+        </section>
     )
 
 }

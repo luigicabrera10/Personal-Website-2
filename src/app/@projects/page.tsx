@@ -2,9 +2,9 @@
 export default function ProjectsPage(){
 
     return (
-        <div className="w-full h-screen bg-red-500">
+        <section className="w-full h-full bg-cyan-500 snap-start"  id="projects">
             Projects
-        </div>
+        </section>
     )
 
 }
