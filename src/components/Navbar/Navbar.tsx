@@ -3,6 +3,7 @@ import Logo from "../Logo/Logo";
 import { sections } from "@/data/sections";
 import LinkBlock from "./components/LinkBlock";
 
+
 export default function Navbar() {
 
     return (

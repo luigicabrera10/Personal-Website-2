@@ -1,16 +1,20 @@
 
 import Image from "next/image";
+import ArrowMotion from "./_components/ArrowMotion";
+// import * as motion from "motion/react-client"
 
 export default function Logo({
     size,
     circlePadding = 10,
     fontColor = "#000000",
-    fontSize = 'auto'
+    fontSize = 'auto',
+    animate = true
 } : {
     size: number,
     circlePadding?: number,
     fontColor?: string,
-    fontSize?: number | 'auto'
+    fontSize?: number | 'auto',
+    animate?: boolean
 }) {
 
     const circle = size + circlePadding;
@@ -23,13 +27,17 @@ export default function Logo({
             style={{ width: `${circle}px`, height: `${circle}px`}}
         >
             <div className="relative w-full h-full flex justify-center items-center">
-                <Image
-                    className="absolute"
-                    src='/imgs/logo/logo-arrow.png'
-                    width={square}
-                    height={square}
-                    alt={"My Name Logo"}
-                />
+                {
+                    animate ? <ArrowMotion square={square} />
+                    :<Image
+                        className="absolute"
+                        src='/imgs/logo/logo-arrow.png'
+                        width={square}
+                        height={square}
+                        alt={"Name Logo"}
+                    />
+                }
+
                 <div style={{width: `${square}px`, height: `${square}px`}}>
                     <div className="w-full h-full font-[Arapey] grid grid-cols-3 grid-rows-3 place-items-center">
                         <div className="col-start-2 row-start-1"
@@ -44,6 +52,7 @@ export default function Logo({
                 </div>
 
             </div>
+
         </div>
     );
 }
