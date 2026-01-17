@@ -12,9 +12,12 @@ export default function ScrollWatcher({ children, index }: { children: React.Rea
 
    useEffect(() => {
       console.log(inView)
-      if (inView && activeSection !== index){
+      if (inView && activeSection.id !== index){
          console.log(`Context set to index ${index}`);
-         setActiveSection(index);
+         setActiveSection({
+            id: index, 
+            direction: activeSection.id < index ? false : true
+         });
       }
    }, [inView]);
 

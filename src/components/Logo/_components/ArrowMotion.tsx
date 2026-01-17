@@ -5,19 +5,20 @@ import { useActiveSection } from "@/context/ActiveSectionContext";
 
 export default function ArrowMotion({square} : {square: number}){
 
+    const rotation = 180;
     const {activeSection} = useActiveSection();
 
     return (
         <motion.img
-            key={activeSection}
+            key={activeSection.id}
             initial = {{
                 rotate: 0
             }}
             animate={{ 
-                rotate: 360 
+                rotate: activeSection.direction ? -rotation : rotation 
             }} 
             transition={{
-                duration: 0.85,
+                duration: 0.95,
                 ease: "easeInOut",
                 type: "spring",
                 stiffness: 150,

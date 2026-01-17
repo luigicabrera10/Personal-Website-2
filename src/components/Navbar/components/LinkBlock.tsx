@@ -7,7 +7,7 @@ export default function LinkBlock({sectionName, sectionId} : { sectionName: stri
     return (
         <Link 
             className={`block px-7 py-4 text-4xl`}
-            style={activeSection === sectionId ? {color: "green"} : {}}
+            style={activeSection.id === sectionId ? {color: "green"} : {}}
             href={`#${sectionName.toLowerCase()}`}
         >
             {sectionName}
