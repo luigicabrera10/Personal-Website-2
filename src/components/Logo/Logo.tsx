@@ -1,7 +1,6 @@
 
 import Image from "next/image";
 import ArrowMotion from "./_components/ArrowMotion";
-// import * as motion from "motion/react-client"
 
 export default function Logo({
     size,

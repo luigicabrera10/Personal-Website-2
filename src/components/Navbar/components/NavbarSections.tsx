@@ -19,10 +19,15 @@ export default function NavbarSections(){
             </div>
 
             {isOpen && (
-                <div className="bg-blue-500/50 fixed w-full lg:hidden px-12 mt-33 text-4xl md:text-5xl">
+                <div className="bg-blue-500/50 fixed w-full lg:hidden px-12 mt-28 text-4xl md:text-5xl">
                     {sections.map( (sectionName: string, sectionIndex: number) => {
                         return (
-                            <LinkBlock key={sectionIndex} sectionName={sectionName} sectionId={sectionIndex} closeMenu={() => setIsOpen(false)}/>
+                            <LinkBlock 
+                                key={sectionIndex}
+                                sectionName={sectionName}
+                                sectionId={sectionIndex}
+                                closeMenu={() => setIsOpen(false)}
+                            />
                         )
                     })}
                 </div>
