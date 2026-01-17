@@ -1,8 +1,5 @@
-// import Link from "next/link";
-import Logo from "../Logo/Logo";
-import { sections } from "@/data/sections";
-import LinkBlock from "./components/LinkBlock";
-
+import Logo from "@/components/Logo/Logo";
+import NavbarSections from "@/components/Navbar/components/NavbarSections";
 
 export default function Navbar() {
 
@@ -14,15 +11,9 @@ export default function Navbar() {
                     circlePadding={10}
                 />
             </div>
-            <div className="flex flex-row justify-end items-center">
-                {
-                    sections.map( (sectionName: string, sectionIndex: number) => {
-                        return (
-                            <LinkBlock key={sectionIndex} sectionName={sectionName} sectionId={sectionIndex}/>
-                        )
-                    })
-                }
-            </div>
+
+            <NavbarSections />
+
         </nav>
     );
 }
