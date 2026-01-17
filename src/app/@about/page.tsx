@@ -8,7 +8,7 @@ export default function AboutPage(){
          id="about"
       >
 
-         <div className="w-full px-6 mb-5 lg:w-3/5 text-center lg:text-left lg:ml-15">
+         <div className="w-full px-5 mb-5 lg:w-3/5 text-center lg:text-left lg:ml-10 xl:ml-15">
             <div className="font-bold text-5xl pb-5 lg:py-5 lg:text-7xl">
                Luigi Cabrera
             </div>
@@ -34,13 +34,11 @@ export default function AboutPage(){
 
          </div>
 
-         <div className="w-full self-end h-3/7 lg:h-9/10 flex justify-center">
-            <img
-               // className="h-full"
-               src={'/imgs/luigi.png'}
-               alt="Yeap.. that's me"
-            />
-         </div>
+         <img
+            className=" lg:self-end h-3/7 lg:h-9/10"
+            src={'/imgs/luigi.png'}
+            alt="Yeap.. that's me"
+         />
 
       </section>
    )
