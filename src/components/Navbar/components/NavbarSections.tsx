@@ -45,7 +45,7 @@ export default function NavbarSections(){
                         <div className="pb-8 text-5xl font-bold">
                             Luigi Cabrera
                         </div>
-                        <div className="flex flex-row">
+                        <div className="flex flex-row pb-8">
                             <button>
                                 <img className="w-15 h-15 mr-8" src={'/imgs/icons/linkedin.png'} />
                             </button>
