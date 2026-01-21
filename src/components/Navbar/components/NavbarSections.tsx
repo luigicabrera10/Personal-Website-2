@@ -3,6 +3,7 @@ import { useState } from "react";
 import { sections } from "@/data/sections";
 import { Menu, X } from 'lucide-react';
 import LinkBlock from "@/components/Navbar/components/LinkBlock";
+import { socialMedia } from "@/data/social";
 
 export default function NavbarSections(){
 
@@ -46,15 +47,13 @@ export default function NavbarSections(){
                             Luigi Cabrera
                         </div>
                         <div className="flex flex-row pb-8">
-                            <button>
-                                <img className="w-15 h-15 mr-8" src={'/imgs/icons/linkedin.png'} />
-                            </button>
-                            <button>
-                                <img className="w-15 h-15 mr-8" src={'/imgs/icons/github.png'} />
-                            </button>
-                            <button>
-                                <img className="w-15 h-15 mr-8" src={'/imgs/icons/email.png'} />
-                            </button>
+                            {socialMedia.map( (val, idx) => {
+                                return (
+                                    <button>
+                                        <img className="w-15 h-15 mr-8" src={val.img} />
+                                    </button>
+                                );
+                            })}
                         </div>
                     </div>
                     
