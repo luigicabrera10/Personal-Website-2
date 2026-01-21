@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import { ActiveSectionProvider } from "@/context/ActiveSectionContext";
 import ScrollWatcher from "@/components/ScrollWatcher/ScrollWatcher";
+import SideNav from "@/components/SideNav/SideNav";
 
 export const metadata: Metadata = {
   title: "Luigi Cabrera",
@@ -27,17 +28,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="overflow-hidden">
+      <body>
         <main>
-          <div className="snap-y snap-mandatory scroll-smooth overflow-y-scroll h-screen w-screen font-[IBM_Plex_Mono]">
+          <div className="font-[IBM_Plex_Mono] h-screen w-screen grid grid-rows-[var(--navbar-h)_1fr]">
             <ActiveSectionProvider>
               <Navbar />
-              {children}
-              <ScrollWatcher index={0}>{about}</ScrollWatcher>
-              <ScrollWatcher index={1}>{skills}</ScrollWatcher>
-              <ScrollWatcher index={2}>{experience}</ScrollWatcher>
-              <ScrollWatcher index={3}>{projects}</ScrollWatcher>
-              <ScrollWatcher index={4}>{contact}</ScrollWatcher>
+              <div className="w-full h-full overflow-y-auto lg:grid lg:grid-cols-[92vw_1fr] ">
+                <div className="w-full h-full overflow-y-auto scroll-smooth snap-y snap-mandatory">
+                  <ScrollWatcher index={0}>{about}</ScrollWatcher>
+                  <ScrollWatcher index={1}>{skills}</ScrollWatcher>
+                  <ScrollWatcher index={2}>{experience}</ScrollWatcher>
+                  <ScrollWatcher index={3}>{projects}</ScrollWatcher>
+                  <ScrollWatcher index={4}>{contact}</ScrollWatcher>
+                </div>
+                <div className="bg-teal-600 hidden lg:flex justify-center items-center">
+                  <SideNav />
+                </div>
+              </div>
+
             </ ActiveSectionProvider>
           </div>
         </main>

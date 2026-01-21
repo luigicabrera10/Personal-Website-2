@@ -22,7 +22,7 @@ export default function ScrollWatcher({ children, index }: { children: React.Rea
    }, [inView]);
 
    return (
-      <div ref={ref} className="h-full max-w-full">
+      <div ref={ref} className="h-full w-full">
          {children}
       </div>
    );

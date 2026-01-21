@@ -1,5 +1,6 @@
 "use client"
-import { motion } from "motion/react"
+// import { motion } from "motion/react"
+import { motion } from "framer-motion"
 import { useActiveSection } from "@/context/ActiveSectionContext";
 
 
@@ -18,11 +19,11 @@ export default function ArrowMotion({square} : {square: number}){
                 rotate: activeSection.direction ? -rotation : rotation 
             }} 
             transition={{
-                duration: 0.95,
+                mass: 1.3,
                 ease: "easeInOut",
                 type: "spring",
                 stiffness: 150,
-                damping: 8.5
+                damping: 6.5
             }}
             className="absolute"
             src='/imgs/logo/logo-arrows.png'
