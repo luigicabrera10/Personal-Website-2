@@ -32,9 +32,10 @@ export default function RootLayout({
         <main>
           <div className="font-[IBM_Plex_Mono] h-screen w-screen grid grid-rows-[var(--navbar-h)_1fr]">
             <ActiveSectionProvider>
+              
               <Navbar />
-              <div className="w-full h-full overflow-y-auto lg:grid lg:grid-cols-[92vw_1fr] ">
-                <div className="w-full h-full overflow-y-auto scroll-smooth snap-y snap-mandatory">
+              <div className="w-full h-full overflow-y-auto no-scrollbar lg:grid lg:grid-cols-[92vw_1fr] ">
+                <div className="w-full h-full overflow-y-auto no-scrollbar scroll-smooth snap-y snap-mandatory">
                   <ScrollWatcher index={0}>{about}</ScrollWatcher>
                   <ScrollWatcher index={1}>{skills}</ScrollWatcher>
                   <ScrollWatcher index={2}>{experience}</ScrollWatcher>
