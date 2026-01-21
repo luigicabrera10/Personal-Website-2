@@ -35,22 +35,20 @@ export default function SkillSlider() {
                 <ArrowLeft className="w-10 h-10"/>
             </button>
 
-            <div className="overflow-y-auto grid place-items-center">
-                <div className="flex flex-col justify-center justify-self-center">
-                    {mapArray[selection]['vals'].map((val) => {
-                        return (
-                            <div key={val['tech']} className="flex flex-row items-center mb-4">
-                                <img 
-                                    src={val['img']}
-                                    className="aspect-auto w-8 md:w-10"
-                                />
-                                <div className="text-[1.2rem] md:text-2xl pl-6">
-                                    {val['tech']}
-                                </div>
+            <div className="flex flex-col overflow-y-auto justify-center-safe w-fit justify-self-center">
+                {mapArray[selection]['vals'].map((val) => {
+                    return (
+                        <div key={val['tech']} className="flex flex-row items-center mb-4">
+                            <img 
+                                src={val['img']}
+                                className="aspect-auto w-8 md:w-10"
+                            />
+                            <div className="text-[1.2rem] md:text-2xl pl-6">
+                                {val['tech']}
                             </div>
-                        );
-                    })}
-                </div>
+                        </div>
+                    );
+                })}
             </div>
 
             <button className="row-span-2 flex justify-center items-center" onClick={() => slice(+1)}>
