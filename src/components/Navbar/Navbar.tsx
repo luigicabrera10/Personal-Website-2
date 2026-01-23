@@ -1,31 +1,36 @@
 import Logo from "@/components/Logo/Logo";
 import NavbarSections from "@/components/Navbar/components/NavbarSections";
+import SideNav from "./components/SideNav";
 
 
 export default function Navbar() {
 
     return (
-        <header className="bg-blue-900 flex justify-between">
+        <>
+            <header className="bg-blue-900 flex justify-between px-(--padding-x)">
 
-            <div className="flex justify-center items-center px-8">
+                <div className="flex justify-center items-center">
 
-                {/* Responsive Logos */}
-                <div className="lg:hidden" >
-                    <Logo size={45} circlePadding={10}/>
+                    {/* Responsive Logos */}
+                    <div className="lg:hidden" >
+                        <Logo size={45} circlePadding={10}/>
+                    </div>
+
+                    <div className="hidden lg:block xl:hidden">
+                        <Logo size={60} circlePadding={10}/>
+                    </div>
+
+                    <div className="hidden xl:block">
+                        <Logo size={75} circlePadding={10}/>
+                    </div>
+                    
                 </div>
 
-                <div className="hidden lg:block xl:hidden">
-                    <Logo size={60} circlePadding={10}/>
-                </div>
+                <NavbarSections />
 
-                <div className="hidden xl:block">
-                    <Logo size={75} circlePadding={10}/>
-                </div>
-                
-            </div>
+            </header>
+            <SideNav />
+        </>
 
-            <NavbarSections />
-
-        </header>
     );
 }

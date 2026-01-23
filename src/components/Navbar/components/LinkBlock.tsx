@@ -16,7 +16,7 @@ export default function LinkBlock({
     const {activeSection} = useActiveSection();
     return (
         <Link 
-            className="block py-4 whitespace-nowrap lg:px-6 xl:px-8"
+            className="block py-4 whitespace-nowrap px-4 xl:px-6"
             style={activeSection.id === sectionId ? {color: "green"} : {}}
             href={`#${sectionName.toLowerCase()}`}
             onClick={() => {if (closeMenu !== undefined) closeMenu()}}

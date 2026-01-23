@@ -38,13 +38,13 @@ export default function ContactPage(){
     return (
         <section className="w-full h-full bg-red-500 snap-start"  id="contact">
             <BracketWrapper name="CONTACT">
-                <div className="overflow-y-auto flex flex-col justify-center-safe px-5 text-[1.0rem] min-w-64 max-w-lg lg:max-w-full lg:hidden">
+                <div className="overflow-y-auto flex flex-col justify-center-safe text-[1.0rem] min-w-64 max-w-lg lg:max-w-full lg:hidden">
                     <ContactText />
                     <ContactForm />
                     <SocialMedia />
                 </div>
 
-                <div className="hidden overflow-y-auto text-2xl lg:grid lg:grid-cols-[6fr_4fr] lg:px-14">
+                <div className="hidden overflow-y-auto text-2xl lg:grid lg:grid-cols-[6fr_4fr]">
                     <div className="flex flex-col justify-center mx-2">
                         <ContactText />
                         <SocialMedia />

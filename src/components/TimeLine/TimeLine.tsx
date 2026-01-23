@@ -11,7 +11,7 @@ export default function TimeLine( {startYear, endYear} : {startYear: string, end
 
     return (
         <div className='flex flex-row lg:w-full lg:grid lg:grid-cols-[1fr_8fr_1fr]'>
-            <div className='px-6 text-2xl snap-start'>
+            <div className='pr-6 text-2xl snap-start'>
                 {startYear}
             </div>
 
@@ -45,7 +45,7 @@ export default function TimeLine( {startYear, endYear} : {startYear: string, end
 
             </div>
 
-            <div className='px-6 text-2xl snap-start'>
+            <div className='pl-6 text-2xl snap-start'>
                 {endYear}
             </div>
         </div>

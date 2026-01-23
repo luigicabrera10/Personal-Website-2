@@ -49,7 +49,7 @@ export default function NavbarSections(){
                         <div className="flex flex-row pb-8">
                             {socialMedia.map( (val, idx) => {
                                 return (
-                                    <button>
+                                    <button key={idx}>
                                         <img className="w-15 h-15 mr-8" src={val.img} />
                                     </button>
                                 );
@@ -60,7 +60,7 @@ export default function NavbarSections(){
                 </aside>
             )}
 
-            <div className="hidden lg:flex flex-row justify-end items-center text-3xl xl:text-4xl">
+            <div className="hidden lg:flex flex-row justify-end items-center text-xl xl:text-3xl">
                 {
                     sections.map( (sectionName: string, sectionIndex: number) => {
                         return (

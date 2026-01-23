@@ -1,7 +1,7 @@
 export default function BracketWrapper({children, name} : {children: React.ReactNode, name:string}){
 
     return (
-        <div className="w-full h-full grid grid-rows-[1fr_8fr_1fr] pl-8">
+        <div className="w-full h-full grid grid-rows-[1fr_8fr_1fr]">
             <div className='flex items-center'>
                 <div className='inline-block text-4xl font-bold'> 
                     {name} 
@@ -11,7 +11,9 @@ export default function BracketWrapper({children, name} : {children: React.React
                 </div>  
             </div>
             
-            {children}
+            <div className="w-full h-full px-16">
+                {children}
+            </div>
 
             <div className='flex items-center text-4xl font-bold'>
                 {"}"}  

@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import { ActiveSectionProvider } from "@/context/ActiveSectionContext";
 import ScrollWatcher from "@/components/ScrollWatcher/ScrollWatcher";
-import SideNav from "@/components/SideNav/SideNav";
 
 export const metadata: Metadata = {
   title: "Luigi Cabrera",
@@ -32,11 +31,8 @@ export default function RootLayout({
         <main>
           <div className="font-[IBM_Plex_Mono] h-screen w-screen grid grid-rows-[var(--navbar-h)_1fr]">
             <ActiveSectionProvider>
-
               <Navbar />
-              <SideNav />
-
-              <div className="w-full h-full overflow-y-auto no-scrollbar scroll-smooth snap-y snap-mandatory">
+              <div className="px-(--padding-x) h-full overflow-y-auto no-scrollbar scroll-smooth snap-y snap-mandatory">
                 <ScrollWatcher index={0}>{about}</ScrollWatcher>
                 <ScrollWatcher index={1}>{skills}</ScrollWatcher>
                 <ScrollWatcher index={2}>{experience}</ScrollWatcher>
