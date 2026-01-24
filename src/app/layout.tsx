@@ -34,7 +34,7 @@ export default function RootLayout({
 
           <div className="w-full h-full absolute -z-1">
             <LiquidEther
-              mouseForce={8}
+              mouseForce={12}
               cursorSize={85}
               isViscous={false}
               viscous={20}

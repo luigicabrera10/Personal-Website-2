@@ -1,11 +1,10 @@
-
-import Image from "next/image";
 import ArrowMotion from "./_components/ArrowMotion";
+import ArrowLogo from "./_components/ArrowLogo";
 
 export default function Logo({
     size,
     circlePadding = 10,
-    fontColor = "#000000",
+    fontColor = "#ffffff",
     fontSize = 'auto',
     animate = true
 } : {
@@ -22,24 +21,28 @@ export default function Logo({
 
     return (
         <div 
-            className="bg-white rounded-full" 
+            className=" rounded-full border-3" 
             style={{ width: `${circle}px`, height: `${circle}px`}}
         >
             <div className="relative w-full h-full flex justify-center items-center">
+                <div className="absolute">
                 {
-                    animate ? <ArrowMotion square={square} />
-                    :<Image
-                        className="absolute"
-                        src='/imgs/logo/logo-arrow.png'
-                        width={square}
-                        height={square}
-                        alt={"Name Logo"}
+                    animate ? 
+                    <ArrowMotion>
+                        <ArrowLogo 
+                            size={square}
+                        />
+                    </ArrowMotion>
+                    :
+                    <ArrowLogo 
+                        size={square}
                     />
                 }
+                </div>
 
                 <div style={{width: `${square}px`, height: `${square}px`}}>
-                    <div className="w-full h-full font-[Arapey] grid grid-cols-3 grid-rows-3 place-items-center">
-                        <div className="col-start-2 row-start-1"
+                    <div className="w-full h-full grid grid-cols-3 grid-rows-3 place-items-center">
+                        <div className="col-start-2 row-start-1 "
                             style={{fontSize: `${fontSizeCalc}px`, color: fontColor}}>L</div>
                         <div className="col-start-1 row-start-2"
                             style={{fontSize: `${fontSizeCalc}px`, color: fontColor}}>A</div>
