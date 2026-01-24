@@ -3,7 +3,7 @@ export default function AboutPage(){
 
    return (
       <section 
-         className="w-full h-full snap-start overflow-y-hidden bg-red-500 flex flex-col lg:flex-row-reverse justify-center"
+         className="w-full h-full snap-start overflow-y-hidden bg-red-500/0 flex flex-col lg:flex-row-reverse justify-center"
          id="about"
       >
          <div className="flex justify-center items-end max-h-2/5 lg:max-h-full lg:items-center lg:min-w-4/10">

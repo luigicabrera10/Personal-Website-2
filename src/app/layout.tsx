@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import { ActiveSectionProvider } from "@/context/ActiveSectionContext";
 import ScrollWatcher from "@/components/ScrollWatcher/ScrollWatcher";
+import LiquidEther from '@/components/Background/LiquidEther'
 
 export const metadata: Metadata = {
   title: "Luigi Cabrera",
@@ -29,7 +30,23 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <main>
-          <div className="font-[IBM_Plex_Mono] h-screen w-screen grid grid-rows-[var(--navbar-h)_1fr]">
+          <div className="font-[Fira_Sans] h-screen w-screen grid grid-rows-[var(--navbar-h)_1fr] select-none">
+
+          <div className="w-full h-full absolute -z-1">
+            <LiquidEther
+              mouseForce={8}
+              cursorSize={85}
+              isViscous={false}
+              viscous={20}
+              colors={["#00bbfa","#49dee9","#17e84b","#22d340"]}
+              autoDemo
+              autoSpeed={0.2}
+              autoIntensity={1.1}
+              isBounce={false}
+              resolution={0.4}
+            />
+          </div>
+            
             <ActiveSectionProvider>
               <Navbar />
               <div className="px-(--padding-x) h-full overflow-y-auto no-scrollbar scroll-smooth snap-y snap-mandatory">
@@ -42,7 +59,7 @@ export default function RootLayout({
 
             </ ActiveSectionProvider>
           </div>
-        </main>
+        </main>       
       </body>
     </html>
   );

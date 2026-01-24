@@ -25,7 +25,7 @@ export default function NavbarSections(){
             </div>
 
             {isOpen && (
-                <aside className="bg-blue-800 fixed w-full overflow-y-scroll mt-(--navbar-h) h-[calc(100vh-var(--navbar-h))] pt-8 px-8 text-4xl lg:hidden">
+                <aside className="bg-black fixed w-full overflow-y-scroll mt-(--navbar-h) h-[calc(100vh-var(--navbar-h))] pt-8 px-8 text-4xl lg:hidden">
                     <div>
                         {sections.map( (sectionName: string, sectionIndex: number) => {
                             return (
@@ -72,6 +72,7 @@ export default function NavbarSections(){
                         )
                     })
                 }
+                
             </div>
         </>
 

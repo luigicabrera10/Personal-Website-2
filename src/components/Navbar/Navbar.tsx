@@ -7,7 +7,7 @@ export default function Navbar() {
 
     return (
         <>
-            <header className="bg-blue-900 flex justify-between px-(--padding-x)">
+            <header className="flex justify-between px-(--padding-x)">
 
                 <div className="flex justify-center items-center">
 
