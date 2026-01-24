@@ -21,7 +21,7 @@ export default function Navbar() {
                     </div>
 
                     <div className="hidden xl:block">
-                        <Logo size={80} circlePadding={10}/>
+                        <Logo size={72} circlePadding={10}/>
                     </div>
                     
                 </div>

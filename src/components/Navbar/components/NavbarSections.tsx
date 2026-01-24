@@ -1,9 +1,21 @@
 'use client'
+import { motion } from "motion/react"
 import { useState } from "react";
 import { sections } from "@/data/sections";
 import { Menu, X } from 'lucide-react';
 import LinkBlock from "@/components/Navbar/components/LinkBlock";
 import { socialMedia } from "@/data/social";
+
+const container = {
+    hidden: { },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2,
+        }
+    }
+};
+
 
 export default function NavbarSections(){
 
@@ -12,13 +24,13 @@ export default function NavbarSections(){
     return (
         <>
             <div className="flex lg:hidden">
-                <button 
+                <button
                     onClick={() => setIsOpen(!isOpen)}
                     className="text-white px-8"
                 >
-                    {isOpen ? 
-                        <X className="w-10 h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14"/> 
-                        : 
+                    {isOpen ?
+                        <X className="w-10 h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14"/>
+                        :
                         <Menu className="w-10 h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14"/>
                     }
                 </button>
@@ -29,7 +41,7 @@ export default function NavbarSections(){
                     <div>
                         {sections.map( (sectionName: string, sectionIndex: number) => {
                             return (
-                                <LinkBlock 
+                                <LinkBlock
                                     key={sectionIndex}
                                     sectionName={sectionName}
                                     sectionId={sectionIndex}
@@ -39,7 +51,7 @@ export default function NavbarSections(){
                             )
                         })}
                     </div>
-                    
+
                     <hr className="my-8"></hr>
 
                     <div>
@@ -56,11 +68,16 @@ export default function NavbarSections(){
                             })}
                         </div>
                     </div>
-                    
+
                 </aside>
             )}
 
-            <div className="hidden lg:flex flex-row justify-end items-center text-xl xl:text-3xl">
+            <motion.div
+                className="hidden lg:flex flex-row justify-end items-center text-xl xl:text-3xl"
+                variants={container}
+                initial="hidden"
+                animate="visible"
+            >
                 {
                     sections.map( (sectionName: string, sectionIndex: number) => {
                         return (
@@ -72,8 +89,8 @@ export default function NavbarSections(){
                         )
                     })
                 }
-                
-            </div>
+
+            </motion.div>
         </>
 
     )
