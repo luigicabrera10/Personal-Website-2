@@ -11,7 +11,7 @@ const container = {
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.2,
+            staggerChildren: 0.175,
         }
     }
 };
@@ -38,7 +38,7 @@ export default function NavbarSections(){
 
             {isOpen && (
                 <aside className="bg-black fixed w-full overflow-y-scroll mt-(--navbar-h) h-[calc(100vh-var(--navbar-h))] pt-8 px-8 text-4xl lg:hidden">
-                    <div>
+                    <motion.div variants={container} initial="hidden" animate="visible">
                         {sections.map( (sectionName: string, sectionIndex: number) => {
                             return (
                                 <LinkBlock
@@ -50,7 +50,7 @@ export default function NavbarSections(){
                                 />
                             )
                         })}
-                    </div>
+                    </motion.div>
 
                     <hr className="my-8"></hr>
 

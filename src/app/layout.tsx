@@ -43,7 +43,7 @@ export default function RootLayout({
                 autoSpeed={0.2}
                 autoIntensity={1.1}
                 isBounce={false}
-                resolution={0.4}
+                resolution={0.35}
               />
             </div>
             

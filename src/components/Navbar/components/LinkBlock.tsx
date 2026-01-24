@@ -3,16 +3,6 @@ import * as motion from "motion/react-client"
 import { useActiveSection } from "@/context/ActiveSectionContext";
 import Link from "next/link";
 
-const item = {
-    hidden: { 
-        opacity: 0, 
-        y: -40 
-    },
-    visible: { 
-        opacity: 1, 
-        y: 0,
-    }
-};
 
 export default function LinkBlock({
     sectionName,
@@ -25,24 +15,52 @@ export default function LinkBlock({
     setNumbers?: boolean,
     closeMenu?: () => void
 }){
+
     const {activeSection} = useActiveSection();
-    const selectionStyle = activeSection.id === sectionId ? "text-green-500 font-bold" : "";
+    const isSelected = activeSection.id === sectionId;
+    const selectionStyle = isSelected ? "font-bold" : "";
+
+    const itemStagger = {
+        hidden: { opacity: 0, y: -40 },
+        visible: { 
+            opacity: 1, y: 0, 
+            scale: isSelected ? 1.1 : 1.0,
+            color: isSelected ? "#22c55e" : "#ffffff"
+        },
+    };
+
+    const itemsGestures = {
+        hover: { scale: 1.1 },
+        click: { scale: 0.9 },
+    }
+
     return (
         <motion.div
-            variants={item}
+            variants={itemStagger}
             transition={{
                 type: "spring",
-                stiffness: 250,
-                damping: 8,
+                stiffness: 200,
+                damping: 10,
             }}
         >
-            <Link
-                className={`block py-4 whitespace-nowrap px-4 xl:px-6 ${selectionStyle}`}
-                href={`#${sectionName.toLowerCase()}`}
-                onClick={() => {if (closeMenu !== undefined) closeMenu()}}
+            <motion.div
+                variants={itemsGestures}
+                transition={{
+                    duration: 0.1,
+                    ease: "easeInOut"
+                }}
+                whileHover="hover"
+                whileTap="click"
             >
-                {(setNumbers ? (sectionId+1) + '. ' : '') + sectionName.toUpperCase()}
-            </Link>
+                <Link
+                    className={`block py-4 whitespace-nowrap px-4 xl:px-6 ${selectionStyle}`}
+                    href={`#${sectionName.toLowerCase()}`}
+                    onClick={() => {if (closeMenu !== undefined) closeMenu()}}
+                >
+                    {(setNumbers ? (sectionId+1) + '. ' : '') + sectionName.toUpperCase()}
+                </Link>
+            </motion.div>
         </motion.div>
     );
 }
+

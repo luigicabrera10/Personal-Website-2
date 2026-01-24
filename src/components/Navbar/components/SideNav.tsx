@@ -1,4 +1,5 @@
 'use client'
+import {motion} from "motion/react"
 import { useActiveSection } from "@/context/ActiveSectionContext";
 import { sections } from "@/data/sections";
 import Link from "next/link";
@@ -10,13 +11,30 @@ export default function SideNav(){
     return (
         <header className="hidden lg:flex flex-col fixed right-[calc(var(--padding-x)-16px)] top-1/2 -translate-y-1/2">
             {sections.map( (section, idx) => {
-                const selectionStyle = activeSection.id === idx ? 'bg-cyan-500 h-[48px]' : 'bg-white h-[16px]';
+                const variants = {
+                    hidden: {
+                        opacity: 0.0,
+                        height: '16px',
+                        backgroundColor: "#FFFFFF", // Use hex/rgba for smooth transitions
+                    },
+                    regular: {
+                        opacity: 1.0,
+                    },
+                    selected: {
+                        opacity: 1.0,
+                        height: '48px',
+                        backgroundColor: "#00BCD4", // Cyan color
+                    },
+                }
                 return (
-                    <Link 
+                    <motion.a 
                         key={idx} 
+                        variants={variants}
+                        initial={"hidden"}
+                        animate={activeSection.id === idx ? "selected" : "regular"}
                         href={`#${section.toLowerCase()}`}
-                        className={`${selectionStyle} w-[16px] rounded-full my-2`}
-                    > </Link>
+                        className={`${''} w-[16px] rounded-full my-2`}
+                    > </motion.a>
                 );
             })}
         </header>
