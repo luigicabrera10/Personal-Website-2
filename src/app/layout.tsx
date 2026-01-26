@@ -35,15 +35,14 @@ export default function RootLayout({
             <div className="w-full h-full absolute -z-1">
               <LiquidEther
                 mouseForce={12}
-                cursorSize={85}
+                cursorSize={16}
                 isViscous={false}
                 viscous={20}
                 colors={["#00bbfa","#49dee9","#17e84b","#22d340"]}
-                autoDemo
-                autoSpeed={0.2}
-                autoIntensity={1.1}
+                autoSpeed={0.1}
+                autoIntensity={1.0}
                 isBounce={false}
-                resolution={0.35}
+                resolution={0.075}
               />
             </div>
             
