@@ -4,7 +4,7 @@ import BracketWrapper from '@/components/BracketWrapper/BracketWrapper'
 export default function SkillsPage(){
 
    return (
-      <section className="w-full h-full bg-cyan-500 snap-start" id="skills">    
+      <section className="w-full h-full snap-start" id="skills">    
 
          <BracketWrapper name='SKILLS'>
 

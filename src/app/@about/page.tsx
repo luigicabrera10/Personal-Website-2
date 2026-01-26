@@ -1,49 +1,99 @@
-import Link from "next/link"
+'use client'
+import {motion} from "motion/react"
+import RoleTypewritter from "./_components/RoleTypewritter"
+
 export default function AboutPage(){
 
+   const sectionStagger = {
+      hidden:  {  },
+      visible: { opacity:1.0, transition: { staggerChildren: 0.5, } },
+   }
+
+   const floatingAnimation = {
+      hidden:  { opacity:0.0, y:35 },
+      visible: { opacity:1.0, y:0, transition: { duration:0.35 } },
+   }
+
+   const containerAnimation = {
+      hidden:  { },
+      visible: { opacity:1.0, transition: { staggerChildren: 0.2, } },
+   }
+
+   const scaleAnimation = {
+      hidden: { scale: 0.0 },
+      visible: { scale: 1, transition: {duration: 0.2}  },
+   }
+
    return (
-      <section 
-         className="w-full h-full snap-start overflow-y-hidden bg-red-500/0 flex flex-col lg:flex-row-reverse justify-center"
+      <motion.section
          id="about"
+         className="w-full h-full snap-start overflow-y-hidden flex flex-col gap-2 lg:flex-row-reverse justify-center"
+         variants={sectionStagger}
+         initial="hidden"
+         animate="visible"
       >
          <div className="flex justify-center items-end max-h-2/5 lg:max-h-full lg:items-center lg:min-w-4/10">
-            <img
+            <motion.img
                className="px-8 max-h-full"
                src={'/imgs/luigi.png'}
                alt="Yeap.. that's me"
+               variants={floatingAnimation}
             />
          </div>
 
-         <div className="text-center mx-5 lg:mx-12 lg:text-left lg:flex lg:flex-col lg:justify-center">
-            <div className="font-bold text-5xl pb-5 lg:py-5 lg:text-7xl">
+         <motion.div 
+            className="flex flex-col gap-3.5 overflow-scroll no-scrollbar justify-center-safe text-center lg:gap-5 lg:text-left "
+            variants={containerAnimation}
+         >
+            <motion.div
+               className="font-bold text-5xl lg:text-7xl"
+               variants={scaleAnimation}
+            >
                Luigi Cabrera
-            </div>
+            </motion.div>
 
-            <div className="text-3xl lg:text-4xl font-bold pb-5">
-               Full Stack Developer
-            </div>
+            <motion.div
+               className="text-3xl lg:text-5xl text-green-500 font-[Source_Code_Pro] font-light tracking-tighter"
+               variants={scaleAnimation}
+            >
+               <RoleTypewritter/>
+            </motion.div>
 
-            <div className="hidden lg:block text-[20px]">
+            <motion.div
+               className="text-xm lg:block lg:text-2xl"
+               variants={scaleAnimation}
+            >
                Top-ranked Computer Science Graduate.
                <br></br>
                Focused on building complex and scalable, mobile/web solutions with modern technologies.
-            </div>
+            </motion.div>
 
-            <div className="text-2xl py-2 flex flex-row justify-center lg:justify-start lg:mt-5 lg:text-3xl">
-               <Link 
-                  href="#contact"
-                  className="bg-purple-600 rounded-2xl p-2 text-[15px] lg:text-[17px] font-bold px-6 m-2 lg:py-3 lg:ml-0"
-               >
-                  Contact <br className="lg:hidden"></br> Me
-               </Link>
-               <button className="bg-purple-600 rounded-2xl p-2 text-[15px] lg:text-[17px] font-bold px-6 m-2">
-                  See my <br className="lg:hidden"></br> Resume
-               </button>
-            </div>
+            <motion.div
+               className="flex flex-col items-center lg:items-start "
+               variants={scaleAnimation}
+            >
+               <div className="flex flex-col w-fit gap-3 lg:flex-row text-xl lg:text-2xl text-center ">
+                  <motion.a
+                     href="#contact"
+                     className="bg-green-500 border-green-500 border-2 rounded-xl px-4 py-1 font-bold text-black transition-all duration-300 shadow-green-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]"
+                     whileTap={{ scale: 0.8, transition: {duration: 0.05} }}
+                  >
+                     Contact Me
+                  </motion.a>
+                  <motion.a
+                     target="_blank"
+                     href='https://drive.google.com/file/d/1CXsuG0SlfAje_4yQGKZeyy3_WRUyXx8H/view?usp=sharing'
+                     className=" border-green-500 border-2 rounded-xl px-4 py-1 font-bold text-green-500 transition-all duration-300 shadow-green-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]"
+                     whileTap={{ scale: 0.8, transition: {duration: 0.05} }}
+                  >
+                     See my Resume
+                  </motion.a>
+               </div>
+            </motion.div>
 
-         </div>
+         </motion.div>
 
-      </section>
+      </motion.section>
    )
 
 }
