@@ -11,9 +11,7 @@ export default function ScrollWatcher({ children, index }: { children: React.Rea
    });
 
    useEffect(() => {
-      console.log(inView)
       if (inView && activeSection.id !== index){
-         console.log(`Context set to index ${index}`);
          setActiveSection({
             id: index, 
             direction: activeSection.id < index ? false : true

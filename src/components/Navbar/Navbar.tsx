@@ -1,6 +1,6 @@
 import Logo from "@/components/Logo/Logo";
-import NavbarSections from "@/components/Navbar/components/NavbarSections";
-import SideNav from "./components/SideNav";
+import NavbarSections from "./_components/NavbarSections";
+import SideNav from "./_components/SideNav";
 
 
 export default function Navbar() {

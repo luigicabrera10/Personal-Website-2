@@ -3,7 +3,7 @@ import { motion } from "motion/react"
 import { useState } from "react";
 import { sections } from "@/data/sections";
 import { Menu, X } from 'lucide-react';
-import LinkBlock from "@/components/Navbar/components/LinkBlock";
+import LinkBlock from "@/components/Navbar/_components/LinkBlock";
 import { socialMedia } from "@/data/social";
 
 const container = {

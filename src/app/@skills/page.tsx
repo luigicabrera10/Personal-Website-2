@@ -8,9 +8,9 @@ export default function SkillsPage(){
 
          <BracketWrapper name='SKILLS'>
 
-            <div className='h-full overflow-y-auto no-scrollbar lg:grid lg:grid-cols-[1fr_1fr] gap-10'>
-               <div className='hidden lg:flex text-3xl items-center'>
-                  I excel in dissecting complex problems into manageable tasks, essential for crafting robust, maintainable code in large-scale projects. I'm driven by challenges, always seeking opportunities to enhance my skills. My self-directed learning approach empowers me to quickly grasp and adapt to new technologies autonomously. 
+            <div className='h-full overflow-y-auto no-scrollbar grid grid-rows-[1fr_3fr] gap-4 lg:grid-rows-1 lg:grid-cols-[1fr_1fr] lg:gap-10 place-items-center'>
+               <div className='text-xm items-center text-center md:text-xl lg:text-left lg:flex lg:text-3xl'>
+                  I stand out for my problem-solving skills and my adaptability to work with different frameworks. <br className='hidden lg:block'></br>I'm always seeking opportunities to enhance my skills and learn new technologies.
                </div>
 
                <SkillSlider  />
