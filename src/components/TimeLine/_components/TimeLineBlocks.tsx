@@ -1,4 +1,5 @@
 'use client'
+import {motion, AnimatePresence} from "motion/react"
 import {Fragment} from 'react';
 import {works} from '@/data/works'
 import { useState } from 'react';
@@ -15,6 +16,13 @@ export default function TimeLineBlocks(){
     const [selection, setSelection] = useState<
         {idx?: number, priority:boolean}
     >({idx: undefined, priority: false});
+
+    const variantsBlock = {
+        hidden_bottom: { opacity: 0.0, y:-20 },
+        hidden_top: { opacity: 0.0, y:20 },
+        visible: { opacity: 1.0, y:0, transition: { duration: 0.55 } },
+        exit: { opacity: 0.0 }
+    }
 
     const EmptyTimeLineDiv = () => {
         return <div className="w-[70vw] md:w-[42vw] lg:w-0"></div>
@@ -51,40 +59,55 @@ export default function TimeLineBlocks(){
         { description: JobDetails, isTop: boolean, idx: number} 
     ) => {
 
-        const isHidden = idx !== selection.idx;
+        const isSelected = idx === selection.idx;
 
         return ( 
             <div className='w-full flex justify-center items-center'>
-                <div 
-                    className={
-                        `gap-2 flex flex-col text-center
-                        ${isTop ? 'place-self-end' : 'place-self-start'}  lg:-mx-[60%] xl:-mx-[15%]`
+
+                <AnimatePresence mode="wait" >
+
+                    { isSelected ? 
+                        (
+                            <motion.div 
+                                variants={variantsBlock}
+                                initial={isTop ? 'hidden_top' : 'hidden_bottom'}
+                                animate='visible'
+                                exit='exit'
+                                className={
+                                    `gap-2 flex flex-col text-center
+                                    ${isTop ? 'place-self-end' : 'place-self-start'}  lg:-mx-[60%] xl:-mx-[15%]`
+                                }
+                            >
+                                <div className="text-green-500 font-bold text-xl">{description.position}</div>
+                                
+                                <div className={`text-sm opacity-85 `}>{description.description}</div>
+                                <div className={``}>
+                                    <div className={`font-semibold`}>{description.company}</div>
+                                    <div className={`text-xs `}>{description.date}</div>
+                                </div>
+                                
+                            </motion.div>
+                        ):(
+                            <div className={`font-bold text-xl text-center place-self-${isTop ? 'end' : 'start'}`} >
+                                {description.position}
+                            </div> 
+                        )
                     }
-                >
-                    <div className="font-bold text-xl">{description.position}</div>
 
-                    <div className={`text-sm opacity-85 lg:${isHidden ? 'hidden' : 'visible'}`}>{description.description}</div>
-                    <div className={`lg:${isHidden ? 'hidden' : 'visible'}`}>
-                        <div className={`font-semibold`}>{description.company}</div>
-                        <div className={`text-xs `}>{description.date}</div>
-                    </div>
-                    
-                </div>
 
+                </AnimatePresence>
+                        
             </div>
             
         );
     }
 
-
-
-
     const Block = ({idx, jobVal} : {idx:number, jobVal: JobDetails}) => {
         const isTop = idx % 2 === 0; 
 
         const handleClick = () => {
-            if (idx === selection.idx && selection.priority) setSelection({'idx': undefined, 'priority': false});
-            else setSelection({'idx': idx, 'priority': true});
+            // if (idx === selection.idx && selection.priority) setSelection({'idx': undefined, 'priority': false});
+            // else setSelection({'idx': idx, 'priority': true});
             // console.log(`Clicked ${selection.idx} - ${selection.priority}`);
 
         }
