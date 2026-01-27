@@ -8,7 +8,7 @@ export default function ExperiencePage(){
     return (
         <section className="w-full h-full snap-start"  id="experience">
             <BracketWrapper name="EXPERIENCE">
-                <div className="flex items-center-safe overflow-x-scroll no-scrollbar scroll-smooth snap-x snap-mandatory lg:max-w-full">
+                <div className="h-full flex items-center-safe overflow-scroll no-scrollbar scroll-smooth snap-x snap-mandatory lg:overflow-visible">
                     <TimeLine startYear="2022" endYear={currentYear}/>
                 </div>
             </BracketWrapper>
