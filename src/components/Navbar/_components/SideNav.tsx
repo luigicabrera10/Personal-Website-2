@@ -19,7 +19,7 @@ export default function SideNav(){
         selected: {
             opacity: 1.0,
             height: '48px',
-            backgroundColor: "#00BCD4", // Cyan color
+            backgroundColor: "#00c951", 
         },
     }
 

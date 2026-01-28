@@ -16,7 +16,7 @@ export default function ProjectsPage(){
     }
 
     return (
-        <section className="w-full h-full bg-cyan-500 snap-start"  id="projects">
+        <section className="w-full h-full snap-start"  id="projects">
             <BracketWrapper name='PROJECTS'>
                 <div className="w-full h-full grid grid-cols-[1fr_8fr_1fr] lg:grid-cols-[1fr_600px_1fr] place-items-center overflow-y-scroll no-scrollbar">
 
