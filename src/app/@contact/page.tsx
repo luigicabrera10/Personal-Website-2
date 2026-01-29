@@ -26,7 +26,7 @@ export default function ContactPage(){
                             target="_blank" 
                             className="flex flex-row items-center my-1.5 hover:text-green-500 transition-all duration-500"
                         >
-                            <img className="w-8 h-8 mr-2" src={val.img}/>
+                            <img className="w-8 h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 mr-2" src={val.img}/>
                             <div>{val.username}</div>
                         </a>
                     )

@@ -1,7 +1,7 @@
 "use client"
 import { motion} from "motion/react"
 import { useState } from "react"
-import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { technologies } from "@/data/techs"
 import { sections } from "@/data/sections";
 import { useActiveSection } from "@/context/ActiveSectionContext";
@@ -55,7 +55,7 @@ export default function SkillSlider() {
                 whileHover='hover'
                 whileTap='click'
             >
-                <ArrowLeft className="w-10 h-10 lg:w-12 lg:h-12"/>
+                <ChevronLeft className="w-10 h-10 lg:w-12 lg:h-12"/>
             </motion.button>
 
             <motion.div 
@@ -105,7 +105,7 @@ export default function SkillSlider() {
                 whileHover='hover'
                 whileTap='click'
             >
-                <ArrowRight className="w-10 h-10 lg:w-12 lg:h-12"/>
+                <ChevronRight className="w-10 h-10 lg:w-12 lg:h-12"/>
             </motion.button>
 
         </div>
