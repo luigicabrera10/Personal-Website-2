@@ -8,7 +8,7 @@ const ModalSlider = ({ isOpen, onClose, children }: {
 
     return createPortal(
         <div 
-            className="fixed inset-0 z-100 flex items-center justify-center p-2 sm:p-10"
+            className="fixed inset-0 z-1000 flex items-center justify-center p-2 sm:p-10"
             onClick={onClose}
         >
             <div className="absolute inset-0 bg-black/90 backdrop-blur-xl" />
@@ -21,7 +21,7 @@ const ModalSlider = ({ isOpen, onClose, children }: {
             </button>
 
             <div 
-                className="relative z-105 w-full h-full flex items-center justify-center  pointer-events-none"
+                className="relative w-full h-full flex items-center justify-center  pointer-events-none"
                 onClick={(e) => e.stopPropagation()}
             >
 

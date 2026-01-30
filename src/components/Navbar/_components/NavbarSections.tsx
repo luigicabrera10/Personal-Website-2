@@ -23,7 +23,7 @@ export default function NavbarSections(){
 
     return (
         <>
-            <div className="flex lg:hidden">
+            <div className="flex lg:hidden  z-110 ">
                 <button
                     onClick={() => setIsOpen(!isOpen)}
                     className="text-white px-8"
@@ -37,7 +37,7 @@ export default function NavbarSections(){
             </div>
 
             {isOpen && (
-                <aside className="bg-black fixed w-full overflow-y-scroll mt-(--navbar-h) h-[calc(100vh-var(--navbar-h))] pt-8 px-8 text-4xl lg:hidden">
+                <aside className="bg-black/85 backdrop-blur-xs z-100 fixed w-full h-full left-0 overflow-y-scroll pt-[calc(16px+var(--navbar-h))] px-8 text-4xl lg:hidden">
                     <motion.div variants={container} initial="hidden" animate="visible">
                         {sections.map( (sectionName: string, sectionIndex: number) => {
                             return (
@@ -61,9 +61,9 @@ export default function NavbarSections(){
                         <div className="flex flex-row pb-8">
                             {socialMedia.map( (val, idx) => {
                                 return (
-                                    <button key={idx}>
-                                        <img className="w-15 h-15 mr-8" src={val.img} />
-                                    </button>
+                                    <a href={val.link} target="_blank" key={idx}>
+                                        <img className="rounded-full border-2 border-white w-15 h-15 mr-8" src={val.img} />
+                                    </a>
                                 );
                             })}
                         </div>

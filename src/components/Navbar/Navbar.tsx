@@ -9,10 +9,10 @@ export default function Navbar() {
         <>
             <header className="flex justify-between px-(--padding-x)">
 
-                <div className="flex justify-center items-center">
+                <div className="flex justify-center z-110 items-center">
 
                     {/* Responsive Logos */}
-                    <div className="lg:hidden" >
+                    <div className="lg:hidden " >
                         <Logo size={56} circlePadding={10}/>
                     </div>
 

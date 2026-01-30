@@ -26,12 +26,24 @@ export default function ContactForm() {
 
                 <div className="flex flex-col">
                     <label className="font-semibold">Name</label>
-                    <input name="name" required type="text" className="p-2 rounded-xs border-2 border-green-500 bg-transparent outline-none focus:shadow-[0_0_10px_rgba(0,201,81,0.4)] transition-all"/>
+                    <input
+                        name="name"
+                        required
+                        type="text"
+                        placeholder="Alias or real name"
+                        className="p-2 rounded-xs border-2 border-green-500 bg-transparent outline-none focus:shadow-[0_0_10px_rgba(0,201,81,0.4)] transition-all"
+                    />
                 </div>
 
                 <div className="flex flex-col">
                     <label className="font-semibold">Subject</label>
-                    <input name="subject" required type="text" className="p-2 rounded-xs border-2 border-green-500 bg-transparent outline-none focus:shadow-[0_0_10px_rgba(0,201,81,0.4)] transition-all"/>
+                    <input
+                        name="subject"
+                        required
+                        type="text"
+                        placeholder="What brings you here?"
+                        className="p-2 rounded-xs border-2 border-green-500 bg-transparent outline-none focus:shadow-[0_0_10px_rgba(0,201,81,0.4)] transition-all"
+                    />
                 </div>
 
                 <div className="flex flex-col">
@@ -39,7 +51,8 @@ export default function ContactForm() {
                     <textarea
                         name="message"
                         required rows={4} 
-                        placeholder="Remember to include a way to contact you!"
+                        placeholder="Drop your message here.
+Include a way to reach you back!"
                         className="p-2 rounded-xs border-2 border-green-500 bg-transparent outline-none focus:shadow-[0_0_10px_rgba(0,201,81,0.4)] transition-all"
                     />
                 </div>
