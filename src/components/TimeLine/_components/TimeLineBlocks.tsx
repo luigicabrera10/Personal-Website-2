@@ -13,9 +13,7 @@ interface JobDetails {
 
 export default function TimeLineBlocks(){
 
-    const [selection, setSelection] = useState<
-        {idx?: number, priority:boolean}
-    >({idx: undefined, priority: false});
+    const [selection, setSelection] = useState<number | undefined>(undefined);
 
     const variantsBlock = {
         hidden_bottom: { opacity: 0.0, y:-20 },
@@ -59,45 +57,62 @@ export default function TimeLineBlocks(){
         { description: JobDetails, isTop: boolean, idx: number} 
     ) => {
 
-        const isSelected = idx === selection.idx;
+        const isSelected = idx === selection;
 
         return ( 
-            <div className='w-full flex justify-center items-center'>
+            <>
+                <div className='hidden w-full lg:flex justify-center items-center'>
 
-                <AnimatePresence mode="wait" >
+                    <AnimatePresence mode="wait" >
 
-                    { isSelected ? 
-                        (
-                            <motion.div 
-                                variants={variantsBlock}
-                                initial={isTop ? 'hidden_top' : 'hidden_bottom'}
-                                animate='visible'
-                                exit='exit'
-                                className={
-                                    `gap-2 flex flex-col text-center
-                                    ${isTop ? 'place-self-end' : 'place-self-start'}  lg:-mx-[60%] xl:-mx-[15%]`
-                                }
-                            >
-                                <div className="text-green-500 font-bold text-xl">{description.position}</div>
-                                
-                                <div className={`text-sm opacity-85 `}>{description.description}</div>
-                                <div className={``}>
-                                    <div className={`font-semibold`}>{description.company}</div>
-                                    <div className={`text-xs `}>{description.date}</div>
-                                </div>
-                                
-                            </motion.div>
-                        ):(
-                            <div className={`font-bold text-xl text-center place-self-${isTop ? 'end' : 'start'}`} >
-                                {description.position}
-                            </div> 
-                        )
-                    }
+                        { isSelected ? 
+                            (
+                                <motion.div 
+                                    variants={variantsBlock}
+                                    initial={isTop ? 'hidden_top' : 'hidden_bottom'}
+                                    animate='visible'
+                                    exit='exit'
+                                    className={
+                                        `gap-2 flex flex-col text-center
+                                        ${isTop ? 'place-self-end' : 'place-self-start'}  lg:-mx-[60%] xl:-mx-[15%]`
+                                    }
+                                >
+                                    <div className="text-green-500 font-bold text-xl">{description.position}</div>
+                                    
+                                    <div className={`text-sm opacity-85 `}>{description.description}</div>
+                                    <div className={``}>
+                                        <div className={`font-semibold`}>{description.company}</div>
+                                        <div className={`text-xs `}>{description.date}</div>
+                                    </div>
+                                    
+                                </motion.div>
+                            ):(
+                                <div className={`font-bold text-xl text-center place-self-${isTop ? 'end' : 'start'}`} >
+                                    {description.position}
+                                </div> 
+                            )
+                        }
 
 
-                </AnimatePresence>
+                    </AnimatePresence>
+                            
+                </div>
+
+                <div className={`lg:hidden w-full ${isTop ? 'place-self-end' : 'place-self-start'}`}>
+
+                    <div className="gap-2 flex flex-col text-center lg:-mx-[60%] xl:-mx-[15%]">
+                        <div className="text-green-500 font-bold text-xl">{description.position}</div>
                         
-            </div>
+                        <div className={`text-sm opacity-85 `}>{description.description}</div>
+                        <div className={``}>
+                            <div className={`font-semibold`}>{description.company}</div>
+                            <div className={`text-xs `}>{description.date}</div>
+                        </div>
+                        
+                    </div>
+                            
+                </div>
+            </>
             
         );
     }
@@ -105,25 +120,14 @@ export default function TimeLineBlocks(){
     const Block = ({idx, jobVal} : {idx:number, jobVal: JobDetails}) => {
         const isTop = idx % 2 === 0; 
 
-        const handleClick = () => {
-            // if (idx === selection.idx && selection.priority) setSelection({'idx': undefined, 'priority': false});
-            // else setSelection({'idx': idx, 'priority': true});
-            // console.log(`Clicked ${selection.idx} - ${selection.priority}`);
-
-        }
-
-        const handleHover = (enter: Boolean) => {
-            if (enter && !selection.priority){
-                setSelection({'idx': idx, 'priority': false});
-                // console.log(`Hover ${idx}: ${selection.idx} - ${selection.priority}`);
-            }
+        const handleHover = () => {
+            setSelection(idx);
+            // console.log(`Hover ${idx}: ${selection}`);
         }
 
         return (
             <div 
-                onClick={handleClick}
-                onMouseEnter={() => handleHover(true)}
-                onMouseLeave={() => handleHover(false)}
+                onMouseEnter={handleHover}
                 className='w-full grid grid-rows-subgrid row-span-3'
             >
                 {isTop ? 
