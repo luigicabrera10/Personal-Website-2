@@ -9,6 +9,7 @@ import LiquidEther from '@/components/Background/LiquidEther'
 export const metadata: Metadata = {
   title: "Luigi Cabrera",
   description: "Luigi Cabrera Personal Design",
+  icons: [ '/icon.png' ]
 };
 
 export default function RootLayout({
