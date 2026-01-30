@@ -51,8 +51,7 @@ export default function ContactForm() {
                     <textarea
                         name="message"
                         required rows={4} 
-                        placeholder="Drop your message here.
-Include a way to reach you back!"
+                        placeholder={"Drop your message here.\nInclude a way to reach you back!"}
                         className="p-2 rounded-xs border-2 border-green-500 bg-transparent outline-none focus:shadow-[0_0_10px_rgba(0,201,81,0.4)] transition-all"
                     />
                 </div>
