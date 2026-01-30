@@ -11,7 +11,8 @@ export default function RoleTypewritter() {
          <Typewriter 
             words={rolesFixed}
             loop={0}
-            typeSpeed={90}
+            typeSpeed={60}
+            deleteSpeed={80}
          />
          <Cursor />
       </>

@@ -80,9 +80,20 @@ export default function ProjectSlider() {
                         className="h-fit relative "    
                     />
 
-                    <div className="w-full overflow-y-scroll no-scrollbar">
+                    <div className="w-full flex flex-col gap-2 no-scrollbar">
                         <div className="text-2xl font-semibold">{projects[projectIndex].tittle}</div>
                         <div className="text-md opacity-80">{projects[projectIndex].description}</div>
+                        { projects[projectIndex].github && 
+                            <motion.a
+                                variants={buttonGesture}
+                                whileHover='hover'
+                                href={projects[projectIndex].github}
+                                target="_blank"
+                                className="underline text-md cursor-pointer"
+                            >
+                                GitHub
+                            </motion.a>
+                        }
                     </div>
                    
                     
