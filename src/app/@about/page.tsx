@@ -1,6 +1,16 @@
-'use client'
-import {motion} from "motion/react"
+import { Metadata } from "next";
+import * as motion from "motion/react-client"
 import RoleTypewritter from "./_components/RoleTypewritter"
+
+export const metadata: Metadata = {
+   title: 'Luigi | About',
+   description: 'Information about me and the roles I have worked in.',
+   openGraph: {
+      title: 'Luigi Cabrera | About',
+      description: 'Information about me and the roles I have worked in.',
+      images: ['/imgs/metadata/og-image.png'], 
+   },
+};
 
 export default function AboutPage(){
 
@@ -45,12 +55,12 @@ export default function AboutPage(){
             className="flex flex-col gap-3.5 overflow-scroll no-scrollbar justify-center-safe text-center lg:gap-5 lg:text-left "
             variants={containerAnimation}
          >
-            <motion.div
+            <motion.h1
                className="font-bold text-5xl lg:text-7xl"
                variants={scaleAnimation}
             >
                Luigi Cabrera
-            </motion.div>
+            </motion.h1>
 
             <motion.div
                className="text-3xl lg:text-5xl text-green-500 font-[Source_Code_Pro] font-light tracking-tighter"

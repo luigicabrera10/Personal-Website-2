@@ -7,9 +7,66 @@ import ScrollWatcher from "@/components/ScrollWatcher/ScrollWatcher";
 import LiquidEther from '@/components/Background/LiquidEther'
 
 export const metadata: Metadata = {
-  title: "Luigi Cabrera",
-  description: "Luigi Cabrera Personal Design",
-  icons: [ '/icon.png' ]
+  metadataBase: new URL('https://luigi-cabrera.com'),
+
+  title: 'Luigi Cabrera | Full Stack Developer',
+  description: 'Full Stack Developer specializing in high-performance web/mobile applications.',
+  icons: [ '/icon.png' ],
+  keywords: [
+    'Luigi Cabrera',
+    'Full Stack Developer',
+    'React Developer',
+    'Next.js Portfolio',
+    'Software Engineer',
+    'Developer',
+    'Luigi',
+    'Cabrera'
+  ],
+
+  authors: [{ name: 'Luigi Cabrera', url: 'https://luigi-cabrera.com' }],
+  creator: 'Luigi Cabrera',
+  publisher: 'Luigi Cabrera',
+
+  openGraph: {
+    title: 'Luigi Cabrera | Full Stack Developer',
+    description: 'Full Stack Developer specializing in high-performance web/mobile applications.',
+    url: 'https://luigi-cabrera.com',
+    siteName: 'Luigi Cabrera Portfolio',
+    images: [
+      {
+        url: '/imgs/metadata/og-image.png',
+        width: 2493,
+        height: 1368,
+        alt: 'Luigi Cabrera Portfolio Preview',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Luigi Cabrera | Full Stack Developer',
+    description: 'Full Stack Developer.',
+    // creator: '@twitterhandle',
+    images: ['/imgs/metadata/og-image.png'],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
+  },
 };
 
 export default function RootLayout({

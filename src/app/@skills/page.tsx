@@ -1,5 +1,17 @@
+import { Metadata } from 'next';
 import SkillSlider from './_components/SkillSlider'
 import BracketWrapper from '@/components/BracketWrapper/BracketWrapper'
+
+export const metadata: Metadata = {
+  title: 'Luigi | Skills',
+  description: "Frameworks an technologies I have worked with and feel comfortable using.",
+  openGraph: {
+    title: 'Luigi Cabrera | Skills',
+    description: "Frameworks an technologies I have worked with and feel comfortable using.",
+    images: ['/imgs/metadata/og-image.png'], 
+  },
+};
+
 
 export default function SkillsPage(){
 
