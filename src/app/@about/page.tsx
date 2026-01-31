@@ -1,16 +1,5 @@
-import { Metadata } from "next";
 import * as motion from "motion/react-client"
 import RoleTypewritter from "./_components/RoleTypewritter"
-
-export const metadata: Metadata = {
-   title: 'Luigi | About',
-   description: 'Information about me and the roles I have worked in.',
-   openGraph: {
-      title: 'Luigi Cabrera | About',
-      description: 'Information about me and the roles I have worked in.',
-      images: ['/imgs/metadata/og-image.png'], 
-   },
-};
 
 export default function AboutPage(){
 

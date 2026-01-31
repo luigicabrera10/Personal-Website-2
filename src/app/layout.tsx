@@ -10,17 +10,27 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://luigi-cabrera.com'),
 
   title: 'Luigi Cabrera | Full Stack Developer',
-  description: 'Full Stack Developer specializing in high-performance web/mobile applications.',
+  description: "Full Stack Developer specializing in high-performance web and mobile applications. Discover my skills, experience, and the projects I've worked on.",
   icons: [ '/icon.png' ],
   keywords: [
     'Luigi Cabrera',
     'Full Stack Developer',
     'React Developer',
-    'Next.js Portfolio',
+    'Portfolio',
+    'Next.js',
     'Software Engineer',
     'Developer',
     'Luigi',
-    'Cabrera'
+    'Cabrera',
+    'App',
+    'Front',
+    'Back',
+    'Engineer',
+    'Computer Science',
+    'CS',
+    'Computer',
+    'Science',
+    'Peru'
   ],
 
   authors: [{ name: 'Luigi Cabrera', url: 'https://luigi-cabrera.com' }],
@@ -29,7 +39,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: 'Luigi Cabrera | Full Stack Developer',
-    description: 'Full Stack Developer specializing in high-performance web/mobile applications.',
+    description: "Full Stack Developer specializing in high-performance web and mobile applications. Discover my skills, experience, and the projects I've worked on.",
     url: 'https://luigi-cabrera.com',
     siteName: 'Luigi Cabrera Portfolio',
     images: [

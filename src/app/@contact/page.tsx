@@ -1,18 +1,6 @@
-import { Metadata } from "next";
 import BracketWrapper from "@/components/BracketWrapper/BracketWrapper"
 import ContactForm from "./_components/ContactForm"
 import { socialMedia } from "@/data/social"
-
-export const metadata: Metadata = {
-  title: 'Luigi | Contact',
-  description: 'Social media links and a form to reach out to me.',
-  openGraph: {
-    title: 'Luigi Cabrera | Contact',
-    description: 'Social media links and a form to reach out to me.',
-    images: ['/imgs/metadata/og-image.png'], 
-  },
-};
-
 
 export default function ContactPage(){
 
