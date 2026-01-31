@@ -1,5 +1,6 @@
 "use client"
 import { motion} from "motion/react"
+import Image from "next/image";
 import { useState } from "react"
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { technologies } from "@/data/techs"
@@ -84,9 +85,12 @@ export default function SkillSlider() {
                                     variants={itemsGestures}
                                     whileHover='hover'
                                 >
-                                    <img 
+                                    <Image 
                                         src={val['img']}
                                         className="aspect-auto w-8 md:w-12"
+                                        width={150}
+                                        height={150}
+                                        alt={val['tech']}
                                     />
                                     <div className="text-[1.2rem] md:text-2xl pl-6">
                                         {val['tech']}

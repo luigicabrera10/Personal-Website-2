@@ -1,4 +1,5 @@
 import * as motion from "motion/react-client"
+import Image from "next/image"
 import RoleTypewritter from "./_components/RoleTypewritter"
 
 export default function AboutPage(){
@@ -26,22 +27,29 @@ export default function AboutPage(){
    return (
       <motion.section
          id="about"
-         className="w-full h-full snap-start overflow-y-hidden flex flex-col gap-2 lg:flex-row-reverse justify-center"
+         className="w-full h-full snap-start overflow-y-scroll no-scrollbar flex flex-col gap-2 lg:flex-row-reverse justify-center-safe py-6"
          variants={sectionStagger}
          initial="hidden"
          animate="visible"
       >
-         <div className="flex justify-center items-end max-h-2/5 lg:max-h-full lg:items-center lg:min-w-4/10">
-            <motion.img
-               className="px-8 max-h-full"
-               src={'/imgs/luigi.png'}
-               alt="Yeap.. that's me"
-               variants={floatingAnimation}
+
+         <motion.div
+            variants={floatingAnimation}
+            className="relative flex min-h-[55vw] max-h-[60vh] lg:h-full lg:min-h-8/10 lg:min-w-4/10 lg:place-self-center"
+         >
+            <Image
+               src="/imgs/luigi.png"
+               alt="Luigi Cabrera - Computer Science Graduate"
+               sizes="(max-width: 1024px) 100vw, 40vw" 
+               className="object-contain px-8"
+               priority
+               fill
             />
-         </div>
+         </motion.div>
+
 
          <motion.div 
-            className="flex flex-col gap-3.5 overflow-scroll no-scrollbar justify-center-safe text-center lg:gap-5 lg:text-left "
+            className="flex flex-col gap-3.5 justify-center-safe text-center lg:gap-5 lg:text-left "
             variants={containerAnimation}
          >
             <motion.h1
